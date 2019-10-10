@@ -1,3 +1,3 @@
 "# wcs-goometry"
 
-GeOOmetry
+GeOOmetry from Ubuntu

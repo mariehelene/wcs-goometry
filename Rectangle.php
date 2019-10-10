@@ -1,33 +1,23 @@
 <?php
+require_once 'Shape.php';
 
-
-class Rectangle
+class Rectangle extends Shape
 {
     /**
      * @var integer
      */
-    private $width;
+    protected $width;
 
     /**
      * @var integer
      */
-    private $height;
-
-    /**
-     * @var string
-     */
-    private $color;
+    protected $height;
 
     public function __construct(int $width, int $height, string $color = 'black')
     {
         $this->width = $width;
         $this->height = $height;
         $this->color = $color;
-    }
-
-    public function __toString()
-    {
-        return '<div style="width:' . $this->width . 'px;height:' . $this->height . 'px; background:' . $this->color . ';"></div>';
     }
 
     /**
@@ -42,9 +32,9 @@ class Rectangle
      * @param int $width
      * @return Rectangle
      */
-    public function setwidth(int $width): Rectangle
+    public function setWidth(int $width): Rectangle
     {
-        $this->width = $width;
+        $this->width = abs($width);
         return $this;
     }
 
@@ -62,25 +52,22 @@ class Rectangle
      */
     public function setHeight(int $height): Rectangle
     {
-        $this->height = $height;
+        $this->height = abs($height);
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getColor(): string
+    public function __toString()
     {
-        return $this->color;
+        return '<div style="width:' . $this->width . 'px;height:' . $this->height . 'px; background:' . $this->color . ';"></div>';
     }
 
-    /**
-     * @param string $color
-     * @return Rectangle
-     */
-    public function setColor(int $color): Rectangle
+    public function getPerimeter(): float
     {
-        $this->color = $color;
-        return $this;
+        return ($this->width + $this->height) * 2;
+    }
+
+    public function getArea(): float
+    {
+        return $this->width * $this->height;
     }
 }
