@@ -1,3 +1,3 @@
 "# wcs-goometry"
 
-GeOOmetry from Ubuntu et XDebug
+GeOOmetry from Ubuntu, avec LAMP et XDebug et modif email user
