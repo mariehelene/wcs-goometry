@@ -1,3 +1,3 @@
 "# wcs-goometry"
 
-GeOOmetry from Ubuntu
+GeOOmetry from Ubuntu et XDebug
