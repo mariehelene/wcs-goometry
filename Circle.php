@@ -13,6 +13,16 @@ class Circle extends Shape
      */
     private $radius;
 
+    public function __construct(int $radius, string $color = 'black')
+    {
+        try {
+            $this->setRadius($radius);
+        }catch( Exception $exception){
+            echo '<br>Error on Circle construct: ',  $exception->getMessage(), "\n";
+        }
+        parent::setColor($color);
+    }
+
     /**
      * @return int
      */
@@ -24,18 +34,19 @@ class Circle extends Shape
     /**
      * @param int $radius
      * @return Circle
+     * @throws LogicException
      */
     public function setRadius(int $radius): Circle
     {
-        $this->radius = abs($radius);
+        if ($radius <= 0) {
+            throw new LogicException('Radius must be > 0!');
+        } else {
+            $this->radius = $radius;
+        }
         return $this;
     }
 
-    public function __construct(int $radius, string $color = 'black')
-    {
-        $this->radius = $radius;
-        parent::setColor($color);
-    }
+
 
     public function __toString()
     {

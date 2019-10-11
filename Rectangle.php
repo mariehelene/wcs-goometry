@@ -15,8 +15,18 @@ class Rectangle extends Shape
 
     public function __construct(int $width, int $height, string $color = 'black')
     {
-        $this->width = $width;
-        $this->height = $height;
+
+        try {
+            $this->setWidth($width);
+        }catch( Exception $exception){
+            echo '<br>Error on construct: ',  $exception->getMessage(), "\n";
+        }
+
+        try {
+            $this->setHeight($height);
+        }catch( Exception $exception){
+            echo '<br>Error on construct: ',  $exception->getMessage(), "\n";
+        }
         $this->color = $color;
     }
 
@@ -34,7 +44,11 @@ class Rectangle extends Shape
      */
     public function setWidth(int $width): Rectangle
     {
-        $this->width = abs($width);
+        if ($width <= 0) {
+            throw new LogicException('Width must be > 0!');
+        } else {
+            $this->width = $width;
+        }
         return $this;
     }
 
@@ -49,10 +63,15 @@ class Rectangle extends Shape
     /**
      * @param int $height
      * @return Rectangle
+     * @throws
      */
     public function setHeight(int $height): Rectangle
     {
-        $this->height = abs($height);
+        if ($height <= 0) {
+            throw new LogicException('Height must be > 0!');
+        } else {
+            $this->height = $height;
+        }
         return $this;
     }
 
