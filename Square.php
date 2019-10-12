@@ -1,5 +1,7 @@
 <?php
-require_once 'Rectangle.php';
+namespace Geometry;
+
+// require_once 'Rectangle.php';
 
 class Square extends Rectangle
 {

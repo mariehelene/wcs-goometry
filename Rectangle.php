@@ -1,5 +1,5 @@
 <?php
-require_once 'Shape.php';
+namespace Geometry;
 
 class Rectangle extends Shape
 {

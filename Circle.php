@@ -1,5 +1,5 @@
 <?php
-require_once 'Shape.php';
+namespace Geometry;
 
 class Circle extends Shape
 {
@@ -26,7 +26,7 @@ class Circle extends Shape
     /**
      * @param int $radius
      * @return Circle
-     * @throws LogicException
+     * @throws \LogicException
      */
     public function setRadius(int $radius): Circle
     {

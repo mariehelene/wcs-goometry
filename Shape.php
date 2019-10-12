@@ -1,4 +1,5 @@
 <?php
+namespace Geometry;
 
 abstract class Shape
 {
