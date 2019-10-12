@@ -30,12 +30,9 @@ class Rectangle extends Shape
         $this->color = $color;
     }
 
-    /**
-     * @return int
-     */
-    public function getWidth(): int
+    public function __toString()
     {
-        return $this->width;
+        return '<div style="width:' . $this->width . 'px;height:' . $this->height . 'px; background:' . $this->color . ';"></div>';
     }
 
     /**
@@ -52,12 +49,14 @@ class Rectangle extends Shape
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getHeight(): int
+    public function getArea(): float
     {
-        return $this->height;
+        return $this->width * $this->height;
+    }
+
+    public function getPerimeter(): float
+    {
+        return ($this->width + $this->height) * 2;
     }
 
     /**
@@ -75,18 +74,19 @@ class Rectangle extends Shape
         return $this;
     }
 
-    public function __toString()
+    /**
+     * @return int
+     */
+    public function getHeight(): int
     {
-        return '<div style="width:' . $this->width . 'px;height:' . $this->height . 'px; background:' . $this->color . ';"></div>';
+        return $this->height;
     }
 
-    public function getPerimeter(): float
+    /**
+     * @return int
+     */
+    public function getWidth(): int
     {
-        return ($this->width + $this->height) * 2;
-    }
-
-    public function getArea(): float
-    {
-        return $this->width * $this->height;
+        return $this->width;
     }
 }

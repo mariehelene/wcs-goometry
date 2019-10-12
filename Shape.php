@@ -1,20 +1,11 @@
 <?php
 
-
 abstract class Shape
 {
     /**
      * @var string
      */
     protected $color = 'black';
-
-    /**
-     * @return string
-     */
-    public function getColor(): string
-    {
-        return $this->color;
-    }
 
     /**
      * @param string $color
@@ -36,4 +27,11 @@ abstract class Shape
      */
     abstract public function getArea(): float ;
 
+    /**
+     * @return string
+     */
+    public function getColor(): string
+    {
+        return $this->color;
+    }
 }

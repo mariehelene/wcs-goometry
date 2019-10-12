@@ -4,14 +4,14 @@ require_once 'Shape.php';
 class Circle extends Shape
 {
     /**
-     * @const float
-     */
-    private const PI = 3.14159;
-
-    /**
      * @var integer
      */
     private $radius;
+
+    /**
+     * @const float
+     */
+    private const PI = 3.14159;
 
     public function __construct(int $radius, string $color = 'black')
     {
@@ -21,14 +21,6 @@ class Circle extends Shape
             echo '<br>Error on Circle construct: ',  $exception->getMessage(), "\n";
         }
         parent::setColor($color);
-    }
-
-    /**
-     * @return int
-     */
-    public function getRadius(): int
-    {
-        return $this->radius;
     }
 
     /**
@@ -46,11 +38,21 @@ class Circle extends Shape
         return $this;
     }
 
-
-
     public function __toString()
     {
         return '<div style="width:' . $this->radius . 'px;height:' . $this->radius . 'px; border-radius:' . $this->radius . 'px; background:' . $this->color . ';"></div>';
+    }
+
+    /**
+     * @return int
+     */
+    public function getRadius(): int
+    {
+        return $this->radius;
+    }
+
+    public function getDiameter(): float {
+        return $this->radius * 2;
     }
 
     public function getPerimeter(): float
