@@ -1,6 +1,9 @@
 <?php
 namespace Geometry;
 
+use Exception;
+use LogicException;
+
 class Circle extends Shape
 {
     /**

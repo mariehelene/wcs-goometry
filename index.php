@@ -4,11 +4,11 @@ function AutoloadClass($name) {
 }
 spl_autoload_register('AutoloadClass');
 
-use Geometry as G;
+use Geometry as g;
 
-echo $rectangle = new G\Rectangle(200,300,"blue");
-echo $circle = new G\Circle(200,"green");
-echo $square = new G\Square(200);
+echo $rectangle = new g\Rectangle(200,300,"blue");
+echo $circle = new g\Circle(200,"green");
+echo $square = new g\Square(200);
 
 echo "<br>Perimeter of circle is " . $circle->getPerimeter() . " px";
 echo "<br>Area of rectangle is " . $rectangle->getArea() . ' px<sup>2</sup>';
