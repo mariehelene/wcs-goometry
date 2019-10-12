@@ -1,3 +1,3 @@
 "# wcs-goometry"
 
-GeOOmetry from Ubuntu, avec LAMP et XDebug et modif email user
+GeOOmetry with namespaces, use, autoload
