@@ -1,3 +1,3 @@
 "# wcs-goometry"
 
-GeOOmetry with namespaces, use, autoload
+GeOOmetry with namespaces, use, autoload.
